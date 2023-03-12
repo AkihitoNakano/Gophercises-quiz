@@ -27,6 +27,7 @@ func main() {
 	for i, p := range problems {
 		fmt.Printf("Problem #%d: %s = \n", i+1, p.q)
 		var answer string
+		// answerのアドレスを入れる
 		fmt.Scanf("%s", &answer)
 		if answer == p.a {
 			correct++
@@ -38,9 +39,10 @@ func main() {
 func parseLines(lines [][]string) []problem {
 	ret := make([]problem, len(lines))
 	for i, line := range lines {
+		fmt.Println("line", line)
 		ret[i] = problem{
-			q: line[0],
-			a: line[1],
+			q: line[1],
+			a: line[2],
 		}
 	}
 	return ret
